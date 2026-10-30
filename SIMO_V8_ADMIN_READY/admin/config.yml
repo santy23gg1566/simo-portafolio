@@ -3,16 +3,17 @@ backend:
   repo: santy23gg1566/simo-portafolio
   branch: main
 
+# No es necesario Identity ni Git Gateway (obsoleto).
 media_folder: SIMO_V8_ADMIN_READY/uploads
 public_folder: /uploads
 
 collections:
   - name: sitio
     label: ✏️ Editar la web
-    file: SIMO_V8_ADMIN_READY/data/site.json
+    files:
       - name: textos
         label: Inicio, secciones y redes
-        file: data/site.json
+        file: SIMO_V8_ADMIN_READY/data/site.json
         format: json
         fields:
           - {label: 'Inicio: Línea 1', name: hero_line_1, widget: string}
@@ -35,10 +36,10 @@ collections:
           - {label: 'URL TikTok', name: tiktok, widget: string}
   - name: galeria
     label: 🖼️ Portafolio y flyers
-    file: SIMO_V8_ADMIN_READY/data/projects.json
+    files:
       - name: proyectos
         label: Añadir, ordenar y eliminar proyectos
-        file: data/projects.json
+        file: SIMO_V8_ADMIN_READY/data/projects.json
         format: json
         fields:
           - label: Flyers publicados
