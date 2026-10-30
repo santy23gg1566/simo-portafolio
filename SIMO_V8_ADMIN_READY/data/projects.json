@@ -1,14 +1,3 @@
 {
-  "projects": [
-    {
-      "title": "aaa",
-      "category": "Flyers",
-      "description": "aaa",
-      "alt": "",
-      "year": "",
-      "link": "",
-      "published": true,
-      "image": "/uploads/flyer-aaa-1793374990655-yeck8u.png"
-    }
-  ]
+  "projects": []
 }
