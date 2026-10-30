@@ -8,12 +8,12 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_DO">
 <meta property="og:site_name" content="SIMÓ® — Creative Portfolio">
-<meta property="og:url" content="https://portafolio-simo.netlify.app/">
+<meta property="og:url" content="https://simo-v8-admin.netlify.app/">
 <meta property="og:title" content="SIMÓ® | No hago lo mismo. Destaco.">
 <meta property="og:description" content="José Miguel Simó · Dirección de arte, flyers y diseño visual con identidad propia. Explora el universo SIMÓ®.">
 <!-- La vista previa social exige una imagen pública en HTTPS. Publica og-cover.png junto a index.html. -->
-<meta property="og:image" content="https://portafolio-simo.netlify.app/og-cover.png">
-<meta property="og:image:secure_url" content="https://portafolio-simo.netlify.app/og-cover.png">
+<meta property="og:image" content="https://simo-v8-admin.netlify.app/og-cover.png">
+<meta property="og:image:secure_url" content="https://simo-v8-admin.netlify.app/og-cover.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SIMÓ® | No hago lo mismo. Destaco.">
 <meta name="twitter:description" content="Diseño visual que no pasa desapercibido · José Miguel Simó.">
-<meta name="twitter:image" content="https://portafolio-simo.netlify.app/og-cover.png">
+<meta name="twitter:image" content="https://simo-v8-admin.netlify.app/og-cover.png">
 <title>SIMÓ® V8 — José Miguel Simó · Graphic Design & Flyers</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23101113'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='43' font-family='Arial' font-weight='900' fill='%23d5ff6c'%3ES%3C/text%3E%3C/svg%3E">
 <style>
@@ -379,11 +379,21 @@ html[data-power="eco"] .cursor-companion,html[data-motion="off"] .cursor-compani
 @media(max-width:980px){.cms-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.cms-project-grid{grid-template-columns:1fr;gap:29px}.cms-lightbox-body{grid-template-columns:1fr}.cms-lightbox-body img{max-height:55dvh}.cms-lightbox-bar{padding:16px}}
 html[data-performance="max"] .cms-project-button,html[data-motion="off"] .cms-project-button{transition:none!important;box-shadow:none!important}
 
+
+/* SIMÓ SUPER ADMIN public site controls (small, nonblocking) */
+.simo-announcement{padding:10px 18px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:12px;text-align:center;display:flex;justify-content:center;align-items:center;gap:20px;position:relative;z-index:60}
+.simo-announcement[hidden]{display:none!important}.simo-announcement a{text-decoration:underline;text-underline-offset:3px}
+body.simo-hide-showcase .hero-showcase{display:none!important}
+body.simo-hide-showcase .home-hero{grid-template-columns:minmax(0,1fr)!important;max-width:1050px}
+body.simo-hide-ticker .home-ticker{display:none!important}
+body.simo-hide-lab #lab{display:none!important}
+body.simo-hide-lab .about-top{grid-template-columns:minmax(0,1fr)!important}
+
 </style>
 </head>
 <body>
 <div class="ambient-fx" id="ambientFx" aria-hidden="true"><div class="ambient-pattern"></div><div class="ambient-ornament"></div><div class="ambient-orbit"></div><div class="ambient-interactive"></div><div id="themeReactor" class="theme-reactor"></div></div>
-<div class="app">
+<div class="app"><div id="siteAnnouncement" class="simo-announcement" hidden><span id="announcementLabel"></span><a id="announcementLink" href="#portfolio" hidden>VER MÁS ↗</a></div>
   <header class="site-header">
     <div class="shell header-inner">
       <a href="#home" class="brand route-link" aria-label="SIMÓ — inicio"><span class="brand-mark">S</span><span class="brand-copy"><b>SIMÓ<sup style="font-size:9px;letter-spacing:0">®</sup></b><small>INDEPENDENT DESIGNER</small></span></a>
@@ -440,15 +450,15 @@ html[data-performance="max"] .cms-project-button,html[data-motion="off"] .cms-pr
     <section id="home" class="screen" aria-labelledby="heroTitle">
       <div class="shell home-hero">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="square"></span> JOSÉ MIGUEL SIMÓ · DISEÑADOR VISUAL</p>
+          <p class="eyebrow"><span class="square"></span> <span id="heroEyebrowText">JOSÉ MIGUEL SIMÓ · DISEÑADOR VISUAL</span></p>
           <h1 id="heroTitle" class="heading"><span id="heroLine1">NO HAGO</span><br><span class="outline" id="heroLine2">LO MISMO.</span><br><span class="italic contrast" id="heroLine3">Destaco.</span></h1>
           <p class="lead">Un flyer no debería pasar desapercibido. Construyo piezas visuales con concepto, personalidad y ese detalle que te obliga a mirar dos veces.</p>
-          <div class="btn-row"><a href="#portfolio" class="depth-btn route-link" data-cursor-hint="EXPLORAR">EXPLORAR TRABAJOS <span class="arrow" aria-hidden="true">↗</span></a><a href="#about" class="depth-btn ghost route-link" data-cursor-hint="CONOCER">EL UNIVERSO SIMÓ <span class="arrow" aria-hidden="true">✳</span></a></div>
+          <div class="btn-row"><a href="#portfolio" class="depth-btn route-link" data-cursor-hint="EXPLORAR"><span id="mainCtaText">EXPLORAR TRABAJOS</span> <span class="arrow" aria-hidden="true">↗</span></a><a href="#about" class="depth-btn ghost route-link" data-cursor-hint="CONOCER"><span id="secondaryCtaText">EL UNIVERSO SIMÓ</span> <span class="arrow" aria-hidden="true">✳</span></a></div>
           <div class="hero-bottom"><div class="signal"><span class="signal-ring"></span><span class="micro">DISEÑO CON<br>IDENTIDAD PROPIA</span></div><div class="micro">INDEPENDIENTE<br>REPÚBLICA DOMINICANA ↗</div></div>
         </div>
         <div class="hero-showcase" data-cursor-hint="DESCUBRE" id="heroShowcase" aria-label="Composición tridimensional de diseños de muestra"><div class="hero-grid"></div><div class="hero-halo"></div><div class="hero-art" id="heroArt"><div class="floating-poster one" id="heroPosterOne"></div><div class="floating-poster two" id="heroPosterTwo"></div><div class="floating-poster three" id="heroPosterThree"></div></div><div class="hero-stamp"><div><span>✳</span><br>VISUAL<br>EXPERIENCE</div></div><span class="hero-coordinate">SIMÓ® / EXPERIMENT 001</span><span class="hero-flare"></span></div>
       </div>
-      <div class="home-ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span>VISUAL DESIGN <b>✳</b> ART DIRECTION <b>✳</b> BOLD IDEAS <b>✳</b> FLYER CULTURE <b>✳</b> MAKE IT FEEL DIFFERENT <b>✳</b></span><span>VISUAL DESIGN <b>✳</b> ART DIRECTION <b>✳</b> BOLD IDEAS <b>✳</b> FLYER CULTURE <b>✳</b> MAKE IT FEEL DIFFERENT <b>✳</b></span></div></div>
+      <div class="home-ticker" id="homeTicker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span>VISUAL DESIGN <b>✳</b> ART DIRECTION <b>✳</b> BOLD IDEAS <b>✳</b> FLYER CULTURE <b>✳</b> MAKE IT FEEL DIFFERENT <b>✳</b></span><span>VISUAL DESIGN <b>✳</b> ART DIRECTION <b>✳</b> BOLD IDEAS <b>✳</b> FLYER CULTURE <b>✳</b> MAKE IT FEEL DIFFERENT <b>✳</b></span></div></div>
       <div class="shell home-lower"><article><span class="feature-symbol">◈</span><strong>Primero, el concepto.</strong><p>Diseñar con una idea clara hace que cada composición tenga algo que contar.</p></article><article><span class="feature-symbol">↗</span><strong>Impacto a primera vista.</strong><p>Jerarquía, ritmo, color y tipografía para destacar en un mundo que no deja de deslizar.</p></article><article><span class="feature-symbol">✳</span><strong>Detalles que importan.</strong><p>Exploración visual, acabados cuidados y personalidad en cada pieza.</p></article></div>
     </section>
     <section id="portfolio" class="screen" aria-labelledby="portfolioTitle" hidden>
@@ -470,7 +480,7 @@ html[data-performance="max"] .cms-project-button,html[data-motion="off"] .cms-pr
       </div>
     </section>
     <section id="about" class="screen" aria-labelledby="aboutTitle" hidden>
-      <div class="shell"><div class="about-top"><div><p class="eyebrow"><span class="square"></span> 03 / DETRÁS DE LAS IDEAS</p><h2 class="section-title" id="aboutTitle"><span id="aboutLine1">IDEAS QUE</span><br><span id="aboutLine2">ROMPEN</span><br><span class="serif" id="aboutLine3">la forma.</span></h2><p class="lead">Soy José Miguel Simó, diseñador gráfico independiente. Me interesa crear flyers y piezas visuales con una identidad reconocible, donde la composición y el concepto trabajen juntos.</p><p class="about-signature">Pensar. Explorar. Sorprender.</p><a class="plain-link route-link" href="#portfolio">VER PORTAFOLIO <span>↗</span></a></div><div class="lab" id="lab"><div class="lab-screen"><span class="lab-indicator">THE DESIGN LAB / SIMÓ®</span><span class="lab-indicator right">● LIVE</span><div class="lab-ring" aria-hidden="true"></div><div class="lab-ring second" aria-hidden="true"></div><div class="lab-core" aria-hidden="true">S<span style="font-family:Georgia,serif;font-style:italic">°</span><small>CREATE / DISTORT / REPEAT</small></div></div><div class="lab-control"><div><strong>CAMBIA LA ENERGÍA</strong><p>Interactúa con este experimento visual</p></div><div class="swatches" role="group" aria-label="Colores del laboratorio"><button class="swatch" style="--sw:#c9ff63" data-lab-color="#c9ff63" aria-label="Verde eléctrico" aria-pressed="true"></button><button class="swatch" style="--sw:#ab87ff" data-lab-color="#ab87ff" aria-label="Violeta" aria-pressed="false"></button><button class="swatch" style="--sw:#ff695e" data-lab-color="#ff695e" aria-label="Coral" aria-pressed="false"></button><button class="swatch" style="--sw:#4ce5f5" data-lab-color="#4ce5f5" aria-label="Turquesa" aria-pressed="false"></button></div></div><div class="lab-bottom"><div class="lab-range-wrap"><label for="labRange">INTENSIDAD</label><input type="range" id="labRange" class="lab-range" min="0" max="100" value="35"></div><button type="button" id="labRandom" class="lab-restart">MEZCLAR ↗</button></div></div></div><div class="process-heading"><h3>MI PROCESO <span style="color:var(--accent)">✳</span></h3><p>No se trata de añadir efectos por añadir. Se trata de que cada decisión visual tenga un propósito.</p></div><div class="process-grid"><article class="process-card"><div class="process-num"><span>01 / DESCUBRIR</span><span>↗</span></div><div><h4>Encontrar la idea.</h4><p>Entender el objetivo, la audiencia y el concepto detrás de cada pieza.</p></div></article><article class="process-card"><div class="process-num"><span>02 / EXPERIMENTAR</span><span>✳</span></div><div><h4>Romper el molde.</h4><p>Jugar con tipografía, contraste, espacio, ritmo, profundidad y color.</p></div></article><article class="process-card"><div class="process-num"><span>03 / PULIR</span><span>◈</span></div><div><h4>Hacerlo inolvidable.</h4><p>Refinar cada detalle hasta conseguir una pieza visual sólida y expresiva.</p></div></article></div></div>
+      <div class="shell"><div class="about-top"><div><p class="eyebrow"><span class="square"></span> 03 / DETRÁS DE LAS IDEAS</p><h2 class="section-title" id="aboutTitle"><span id="aboutLine1">IDEAS QUE</span><br><span id="aboutLine2">ROMPEN</span><br><span class="serif" id="aboutLine3">la forma.</span></h2><p class="lead">Soy José Miguel Simó, diseñador gráfico independiente. Me interesa crear flyers y piezas visuales con una identidad reconocible, donde la composición y el concepto trabajen juntos.</p><p class="about-signature"><span id="aboutSignatureText">Pensar. Explorar. Sorprender.</span></p><a class="plain-link route-link" href="#portfolio">VER PORTAFOLIO <span>↗</span></a></div><div class="lab" id="lab"><div class="lab-screen"><span class="lab-indicator">THE DESIGN LAB / SIMÓ®</span><span class="lab-indicator right">● LIVE</span><div class="lab-ring" aria-hidden="true"></div><div class="lab-ring second" aria-hidden="true"></div><div class="lab-core" aria-hidden="true">S<span style="font-family:Georgia,serif;font-style:italic">°</span><small>CREATE / DISTORT / REPEAT</small></div></div><div class="lab-control"><div><strong>CAMBIA LA ENERGÍA</strong><p>Interactúa con este experimento visual</p></div><div class="swatches" role="group" aria-label="Colores del laboratorio"><button class="swatch" style="--sw:#c9ff63" data-lab-color="#c9ff63" aria-label="Verde eléctrico" aria-pressed="true"></button><button class="swatch" style="--sw:#ab87ff" data-lab-color="#ab87ff" aria-label="Violeta" aria-pressed="false"></button><button class="swatch" style="--sw:#ff695e" data-lab-color="#ff695e" aria-label="Coral" aria-pressed="false"></button><button class="swatch" style="--sw:#4ce5f5" data-lab-color="#4ce5f5" aria-label="Turquesa" aria-pressed="false"></button></div></div><div class="lab-bottom"><div class="lab-range-wrap"><label for="labRange">INTENSIDAD</label><input type="range" id="labRange" class="lab-range" min="0" max="100" value="35"></div><button type="button" id="labRandom" class="lab-restart">MEZCLAR ↗</button></div></div></div><div class="process-heading"><h3>MI PROCESO <span style="color:var(--accent)">✳</span></h3><p>No se trata de añadir efectos por añadir. Se trata de que cada decisión visual tenga un propósito.</p></div><div class="process-grid"><article class="process-card"><div class="process-num"><span>01 / DESCUBRIR</span><span>↗</span></div><div><h4>Encontrar la idea.</h4><p>Entender el objetivo, la audiencia y el concepto detrás de cada pieza.</p></div></article><article class="process-card"><div class="process-num"><span>02 / EXPERIMENTAR</span><span>✳</span></div><div><h4>Romper el molde.</h4><p>Jugar con tipografía, contraste, espacio, ritmo, profundidad y color.</p></div></article><article class="process-card"><div class="process-num"><span>03 / PULIR</span><span>◈</span></div><div><h4>Hacerlo inolvidable.</h4><p>Refinar cada detalle hasta conseguir una pieza visual sólida y expresiva.</p></div></article></div></div>
     </section>
     <section id="contact" class="screen" aria-labelledby="contactTitle" hidden>
       <div class="shell contact-social-layout">
@@ -495,7 +505,7 @@ html[data-performance="max"] .cms-project-button,html[data-motion="off"] .cms-pr
       </div>
     </section>
   </main>
-  <footer class="shell site-footer"><div>© <span id="year"></span> SIMÓ® — DISEÑAR ES TOMAR POSICIÓN.</div><div class="footer-links"><a href="#home" class="route-link">VOLVER ARRIBA ↑</a><a href="#contact" class="route-link">REDES SOCIALES ↗</a><a id="footerInstagram" href="https://www.instagram.com/simo.dgt/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><a id="footerTiktok" href="https://www.tiktok.com/@josee_ph.hh" target="_blank" rel="noopener noreferrer">TIKTOK</a></div></footer>
+  <footer class="shell site-footer"><div>© <span id="year"></span> SIMÓ® — <span id="footerNoteText">DISEÑAR ES TOMAR POSICIÓN.</span></div><div class="footer-links"><a href="#home" class="route-link">VOLVER ARRIBA ↑</a><a href="#contact" class="route-link">REDES SOCIALES ↗</a><a id="footerInstagram" href="https://www.instagram.com/simo.dgt/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><a id="footerTiktok" href="https://www.tiktok.com/@josee_ph.hh" target="_blank" rel="noopener noreferrer">TIKTOK</a></div></footer>
 </div>
 <dialog class="cms-lightbox" id="cmsLightbox" aria-labelledby="cmsLightboxTitle">
   <div class="cms-lightbox-bar"><div><span class="eyebrow">SIMÓ® / PROJECT VIEWER</span><h3 id="cmsLightboxTitle"></h3></div><button id="cmsLightboxClose" type="button" class="cms-close" aria-label="Cerrar proyecto">✕</button></div>
@@ -505,6 +515,7 @@ html[data-performance="max"] .cms-project-button,html[data-motion="off"] .cms-pr
 <div id="cursorCompanion" class="cursor-companion" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label" id="cursorLabel">EXPLORAR</span></div>
 <div id="routeAnnouncement" class="sr" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
+const SIMO_VISITOR_HAD_PREFS = (()=>{try{return localStorage.getItem("simo.v6.settings")!==null||localStorage.getItem("simo.theme")!==null}catch(e){return false}})();
 'use strict';
 /* PREVISUALIZACIONES DEL HOME: son composiciones decorativas CSS.
    El PORTAFOLIO permanece vacío hasta que publiquemos proyectos reales con Netlify. */
@@ -782,6 +793,42 @@ if(finePointer){
    const social=byId('tiktokLink');const handle=social.querySelector('.social-handle');if(handle)handle.textContent=username.startsWith('@')?username:'@'+username;
   }
  }
+
+ function applyHomeMore(data){
+  if(!data||typeof data!=='object')return;
+  setText('#heroEyebrowText',data.hero_eyebrow);setText('#mainCtaText',data.primary_button);setText('#secondaryCtaText',data.secondary_button);
+  const notice=byId('siteAnnouncement');
+  notice.hidden=data.announcement_enabled!==true||!data.announcement_text;
+  if(!notice.hidden){setText('#announcementLabel',data.announcement_text);const a=byId('announcementLink');const url=validUrl(data.announcement_link);a.hidden=!url;if(url)a.href=url;}
+  document.body.classList.toggle('simo-hide-ticker',data.show_ticker===false);
+  document.body.classList.toggle('simo-hide-showcase',data.show_showcase===false);
+  if(data.ticker_text){const ticker=byId('tickerTrack');if(ticker){ticker.replaceChildren();for(let i=0;i<2;i++){const s=document.createElement('span');s.textContent=data.ticker_text;ticker.appendChild(s)}}}
+ }
+ function applyPortfolioMore(data){if(!data)return;
+  const title=document.querySelector('.empty-portfolio-info > strong');
+  const description=document.querySelector('.empty-portfolio p');
+  if(title&&data.empty_title)title.textContent=data.empty_title;
+  if(description&&data.empty_description)description.textContent=data.empty_description;
+ }
+ function applyAboutMore(data){if(!data)return;setText('#aboutSignatureText',data.signature);document.body.classList.toggle('simo-hide-lab',data.show_lab===false)}
+ function applyExperience(data){if(!data||typeof data!=='object')return;
+  setText('#footerNoteText',data.footer_note);
+  // Site owner defaults apply only to visitors who have not previously chosen their own settings.
+  if(SIMO_VISITOR_HAD_PREFS)return
+  const validThemes=new Set(['dark','light','galaxy','aurora','sunset','ocean','cyberpunk','sakura','forest','sand','mono','crimson','arctic','matrix','retrowave','hologram','pixel','starlight','lava','bauhaus','blueprint','prism','glitch']);
+  const root=document.documentElement;
+  if(validThemes.has(data.default_theme)){
+   const t=data.default_theme;root.dataset.theme=t;
+   // Existing main app has already initialized. A click uses its published setter and persists values.
+   const tile=document.querySelector('[data-set-theme="'+t+'"]');if(tile)tile.click();
+  }
+  // Default effect switches affect new visitors only and preserve the built-in accessible UI.
+  const controls={default_motion:'animationsSwitch',default_interactive:'interactionsSwitch',default_ambient:'ambientSwitch',default_auto_optimize:'autoOptimizeSwitch',default_performance:'performanceSwitch'};
+  for(const [key,id] of Object.entries(controls))if(typeof data[key]==='boolean'){
+    const el=byId(id);if(el&&!el.disabled&&el.checked!==data[key]){el.checked=data[key];el.dispatchEvent(new Event('change',{bubbles:true}))}
+  }
+ }
+
  let published=[];let activeCategory='Todos';
  const grid=byId('projectGrid'),filters=byId('projectFilters'),toolbar=byId('portfolioToolbar'),empty=byId('emptyPortfolio');
  const modal=byId('cmsLightbox');
@@ -826,7 +873,15 @@ if(finePointer){
  // No polling or long-lived listeners: read two small JSON files only once.
  const getJson=async path=>{const res=await fetch(path,{cache:'no-cache'});if(!res.ok)throw new Error('HTTP '+res.status);return res.json()};
  if(location.protocol==='http:'||location.protocol==='https:'){
-  Promise.allSettled([getJson('/data/site.json'),getJson('/data/projects.json')]).then(([site,projects])=>{if(site.status==='fulfilled')applySiteData(site.value);if(projects.status==='fulfilled')applyProjectsData(projects.value)})
+  Promise.allSettled([getJson('/data/site.json'),getJson('/data/projects.json'),getJson('/data/home.json'),getJson('/data/portfolio.json'),getJson('/data/about.json'),getJson('/data/contact.json'),getJson('/data/experience.json')]).then(([site,projects,home,portfolio,about,contact,experience])=>{
+    if(site.status==='fulfilled')applySiteData(site.value);
+    if(home.status==='fulfilled'){applySiteData(home.value);applyHomeMore(home.value)}
+    if(portfolio.status==='fulfilled'){applySiteData(portfolio.value);applyPortfolioMore(portfolio.value)}
+    if(about.status==='fulfilled'){applySiteData(about.value);applyAboutMore(about.value)}
+    if(contact.status==='fulfilled')applySiteData(contact.value);
+    if(projects.status==='fulfilled')applyProjectsData(projects.value);
+    if(experience.status==='fulfilled')applyExperience(experience.value);
+  })
  }
 })();
 
