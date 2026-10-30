@@ -1,1 +1,10 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>SIMÓ® | Editor de contenido</title><link href="/admin/config.yml" type="text/yaml" rel="cms-config-url"><style>body{margin:0;background:#101215;color:#f5f5f5;font-family:system-ui,sans-serif}#top{background:#12151b;color:#eee;display:flex;align-items:center;gap:14px;padding:10px 18px;min-height:40px}#top a{color:#d7ff72;font-weight:800;text-decoration:none}#top span{opacity:.75;font-size:12px}#top small{margin-left:auto}#nc-root{min-height:92vh}</style></head><body><div id="top"><a href="/admin/">← Panel SIMÓ®</a><span>Editor seguro · Los cambios se guardan en GitHub y se publican con Netlify</span><small>SUPER ADMIN V9</small></div><script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script></body></html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>SIMÓ® | Editor de contenido</title><link href="/admin/config.yml" type="text/yaml" rel="cms-config-url"><style>body{margin:0;background:#101215;color:#f5f5f5;font-family:system-ui,sans-serif}#top{background:#12151b;color:#eee;display:flex;align-items:center;gap:14px;padding:10px 18px;min-height:40px}#top a{color:#d7ff72;font-weight:800;text-decoration:none}#top span{opacity:.75;font-size:12px}#top small{margin-left:auto}#nc-root{min-height:92vh}</style><script>
+/* Route old V9 flyer links to V10.1 inline flyer form, keeping Decap for other content. */
+(function(){
+  var route=(window.location.hash || '').toLowerCase();
+  if (/^#\/collections\/flyers(?:\/|$)/.test(route)) {
+    window.location.replace('/admin/#crear');
+  }
+}());
+</script>
+</head><body><div id="top"><a href="/admin/">← Panel SIMÓ®</a><span>Editor seguro · Los cambios se guardan en GitHub y se publican con Netlify</span><small>SUPER ADMIN V10.1</small></div><script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script></body></html>
