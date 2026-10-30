@@ -1,0 +1,63 @@
+# CAMBIA ESTA LÍNEA ANTES DE USAR /admin/: nombreGitHub/nombreRepositorio
+backend:
+  name: github
+  repo: CAMBIAR-USUARIO/CAMBIAR-REPOSITORIO
+  branch: main
+
+# No es necesario Identity ni Git Gateway (obsoleto).
+media_folder: uploads
+public_folder: /uploads
+
+collections:
+  - name: sitio
+    label: ✏️ Editar la web
+    files:
+      - name: textos
+        label: Inicio, secciones y redes
+        file: data/site.json
+        format: json
+        fields:
+          - {label: 'Inicio: Línea 1', name: hero_line_1, widget: string}
+          - {label: 'Inicio: Línea 2', name: hero_line_2, widget: string}
+          - {label: 'Inicio: Línea 3', name: hero_line_3, widget: string}
+          - {label: 'Inicio: Descripción', name: hero_description, widget: text}
+          - {label: 'Portafolio: Línea 1', name: portfolio_line_1, widget: string}
+          - {label: 'Portafolio: Línea 2', name: portfolio_line_2, widget: string}
+          - {label: 'Portafolio: Línea 3', name: portfolio_line_3, widget: string}
+          - {label: 'Portafolio: Descripción', name: portfolio_description, widget: text}
+          - {label: 'Información: Línea 1', name: about_line_1, widget: string}
+          - {label: 'Información: Línea 2', name: about_line_2, widget: string}
+          - {label: 'Información: Línea 3', name: about_line_3, widget: string}
+          - {label: 'Información: Descripción', name: about_description, widget: text}
+          - {label: 'Contacto: Línea 1', name: contact_line_1, widget: string}
+          - {label: 'Contacto: Línea 2', name: contact_line_2, widget: string}
+          - {label: 'Contacto: Línea 3', name: contact_line_3, widget: string}
+          - {label: 'Contacto: Descripción', name: contact_description, widget: text}
+          - {label: 'URL Instagram', name: instagram, widget: string}
+          - {label: 'URL TikTok', name: tiktok, widget: string}
+  - name: galeria
+    label: 🖼️ Portafolio y flyers
+    files:
+      - name: proyectos
+        label: Añadir, ordenar y eliminar proyectos
+        file: data/projects.json
+        format: json
+        fields:
+          - label: Flyers publicados
+            name: projects
+            widget: list
+            required: false
+            summary: '{{fields.title}}'
+            fields:
+              - {label: 'Título del diseño', name: title, widget: string}
+              - {label: 'Imagen del flyer', name: image, widget: image}
+              - {label: 'Texto alternativo (accesibilidad)', name: alt, widget: string, required: false}
+              - label: Categoría
+                name: category
+                widget: select
+                options: ['Flyers', 'Eventos', 'Publicidad', 'Branding', 'Social Media', 'Otros']
+                default: Flyers
+              - {label: 'Año', name: year, widget: string, required: false}
+              - {label: 'Descripción', name: description, widget: text, required: false}
+              - {label: 'Enlace externo (opcional)', name: link, widget: string, required: false}
+              - {label: 'Publicado', name: published, widget: boolean, default: true}
