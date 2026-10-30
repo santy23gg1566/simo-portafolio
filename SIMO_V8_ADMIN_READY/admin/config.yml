@@ -9,7 +9,7 @@ public_folder: /uploads
 collections:
   - name: sitio
     label: ✏️ Editar la web
-    files:
+    file: SIMO_V8_ADMIN_READY/data/site.json
       - name: textos
         label: Inicio, secciones y redes
         file: data/site.json
@@ -35,7 +35,7 @@ collections:
           - {label: 'URL TikTok', name: tiktok, widget: string}
   - name: galeria
     label: 🖼️ Portafolio y flyers
-    files:
+    file: SIMO_V8_ADMIN_READY/data/projects.json
       - name: proyectos
         label: Añadir, ordenar y eliminar proyectos
         file: data/projects.json
